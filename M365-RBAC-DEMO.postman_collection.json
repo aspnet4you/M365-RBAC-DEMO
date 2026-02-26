@@ -1,0 +1,860 @@
+{
+  "info": {
+    "_postman_id": "30085f27-4dd9-4826-966b-309a8c8f7a31",
+    "name": "M365-RBAC-DEMO",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "40705815"
+  },
+  "item": [
+    {
+      "name": "ClientCredential",
+      "item": [
+        {
+          "name": "GetToken Client Credential",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.environment.set(\"access_token\", JSON.parse(responseBody).access_token);"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "client_id",
+                  "value": "{{client_id}}",
+                  "type": "text"
+                },
+                {
+                  "key": "client_secret",
+                  "value": "{{client_secret}}",
+                  "type": "text",
+                  "uuid": "d12318f6-0018-44b2-9cb4-ec99f911e89f"
+                },
+                {
+                  "key": "scope",
+                  "value": "{{scope}}",
+                  "type": "text"
+                },
+                {
+                  "key": "grant_type",
+                  "value": "client_credentials",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "https://login.microsoftonline.com/{{tenant_id}}/oauth2/v2.0/token",
+              "protocol": "https",
+              "host": [
+                "login",
+                "microsoftonline",
+                "com"
+              ],
+              "path": [
+                "{{tenant_id}}",
+                "oauth2",
+                "v2.0",
+                "token"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "ROPC",
+      "item": [
+        {
+          "name": "GetTokenROPCPaul",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.environment.set(\"access_token\", JSON.parse(responseBody).access_token);"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "client_id",
+                  "value": "{{client_id}}",
+                  "type": "text"
+                },
+                {
+                  "key": "client_secret",
+                  "value": "{{client_secret}}",
+                  "type": "text"
+                },
+                {
+                  "key": "username",
+                  "value": "{{username}}",
+                  "type": "text"
+                },
+                {
+                  "key": "password",
+                  "value": "{{userpassword}}",
+                  "type": "text"
+                },
+                {
+                  "key": "grant_type",
+                  "value": "password",
+                  "type": "text"
+                },
+                {
+                  "key": "scope",
+                  "value": "https://graph.microsoft.com/.default",
+                  "type": "text"
+                },
+                {
+                  "key": "state",
+                  "value": "12345",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "https://login.microsoftonline.com/{{tenant_id}}/oauth2/v2.0/token",
+              "protocol": "https",
+              "host": [
+                "login",
+                "microsoftonline",
+                "com"
+              ],
+              "path": [
+                "{{tenant_id}}",
+                "oauth2",
+                "v2.0",
+                "token"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GetTokenROPCBob",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.environment.set(\"access_token\", JSON.parse(responseBody).access_token);"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "client_id",
+                  "value": "{{client_id}}",
+                  "type": "text"
+                },
+                {
+                  "key": "client_secret",
+                  "value": "{{client_secret}}",
+                  "type": "text"
+                },
+                {
+                  "key": "username",
+                  "value": "{{user_bob}}",
+                  "type": "text"
+                },
+                {
+                  "key": "password",
+                  "value": "{{userpass_bob}}",
+                  "type": "text"
+                },
+                {
+                  "key": "grant_type",
+                  "value": "password",
+                  "type": "text"
+                },
+                {
+                  "key": "scope",
+                  "value": "https://graph.microsoft.com/.default",
+                  "type": "text"
+                },
+                {
+                  "key": "state",
+                  "value": "12345",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "https://login.microsoftonline.com/{{tenant_id}}/oauth2/v2.0/token",
+              "protocol": "https",
+              "host": [
+                "login",
+                "microsoftonline",
+                "com"
+              ],
+              "path": [
+                "{{tenant_id}}",
+                "oauth2",
+                "v2.0",
+                "token"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GetTokenROPCAlexW",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.environment.set(\"access_token\", JSON.parse(responseBody).access_token);"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "client_id",
+                  "value": "{{client_id}}",
+                  "type": "text"
+                },
+                {
+                  "key": "client_secret",
+                  "value": "{{client_secret}}",
+                  "type": "text"
+                },
+                {
+                  "key": "username",
+                  "value": "{{user_alexw}}",
+                  "type": "text"
+                },
+                {
+                  "key": "password",
+                  "value": "{{userpass_alexw}}",
+                  "type": "text"
+                },
+                {
+                  "key": "grant_type",
+                  "value": "password",
+                  "type": "text"
+                },
+                {
+                  "key": "scope",
+                  "value": "https://graph.microsoft.com/.default",
+                  "type": "text"
+                },
+                {
+                  "key": "state",
+                  "value": "12345",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "https://login.microsoftonline.com/{{tenant_id}}/oauth2/v2.0/token",
+              "protocol": "https",
+              "host": [
+                "login",
+                "microsoftonline",
+                "com"
+              ],
+              "path": [
+                "{{tenant_id}}",
+                "oauth2",
+                "v2.0",
+                "token"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "EXO",
+      "item": [
+        {
+          "name": "getMail Paul",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{access_token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "https://graph.microsoft.com/v1.0/users/Paul.Smith@aspnet4you2.onmicrosoft.com/messages?top=2&$select=sender,subject,receivedDateTime,sentDateTime",
+              "protocol": "https",
+              "host": [
+                "graph",
+                "microsoft",
+                "com"
+              ],
+              "path": [
+                "v1.0",
+                "users",
+                "Paul.Smith@aspnet4you2.onmicrosoft.com",
+                "messages"
+              ],
+              "query": [
+                {
+                  "key": "top",
+                  "value": "2"
+                },
+                {
+                  "key": "$select",
+                  "value": "sender,subject,receivedDateTime,sentDateTime"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "getMail Bob",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{access_token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "https://graph.microsoft.com/v1.0/users/Bob.Smith@aspnet4you2.onmicrosoft.com/messages?top=2&$select=sender,subject,receivedDateTime,sentDateTime",
+              "protocol": "https",
+              "host": [
+                "graph",
+                "microsoft",
+                "com"
+              ],
+              "path": [
+                "v1.0",
+                "users",
+                "Bob.Smith@aspnet4you2.onmicrosoft.com",
+                "messages"
+              ],
+              "query": [
+                {
+                  "key": "top",
+                  "value": "2"
+                },
+                {
+                  "key": "$select",
+                  "value": "sender,subject,receivedDateTime,sentDateTime"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "getMail Adele",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{access_token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "https://graph.microsoft.com/v1.0/users/AdeleV@aspnet4you2.onmicrosoft.com/messages?top=2&$select=sender,subject,receivedDateTime,sentDateTime",
+              "protocol": "https",
+              "host": [
+                "graph",
+                "microsoft",
+                "com"
+              ],
+              "path": [
+                "v1.0",
+                "users",
+                "AdeleV@aspnet4you2.onmicrosoft.com",
+                "messages"
+              ],
+              "query": [
+                {
+                  "key": "top",
+                  "value": "2"
+                },
+                {
+                  "key": "$select",
+                  "value": "sender,subject,receivedDateTime,sentDateTime"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "getMail AlexW",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{access_token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "https://graph.microsoft.com/v1.0/users/AlexW@aspnet4you2.onmicrosoft.com/messages?top=2&$select=sender,subject,receivedDateTime,sentDateTime",
+              "protocol": "https",
+              "host": [
+                "graph",
+                "microsoft",
+                "com"
+              ],
+              "path": [
+                "v1.0",
+                "users",
+                "AlexW@aspnet4you2.onmicrosoft.com",
+                "messages"
+              ],
+              "query": [
+                {
+                  "key": "top",
+                  "value": "2"
+                },
+                {
+                  "key": "$select",
+                  "value": "sender,subject,receivedDateTime,sentDateTime"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "SPO",
+      "item": [
+        {
+          "name": "Get SiteId",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "var responseBody = pm.response.json();\r",
+                  "var site_id = responseBody.id;\r",
+                  "\r",
+                  "pm.environment.set(\"site_id\", site_id);"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{access_token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://graph.microsoft.com/v1.0/sites/aspnet4you2.sharepoint.com:/sites/Graph-Demo",
+              "protocol": "https",
+              "host": [
+                "graph",
+                "microsoft",
+                "com"
+              ],
+              "path": [
+                "v1.0",
+                "sites",
+                "aspnet4you2.sharepoint.com:",
+                "sites",
+                "Graph-Demo"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get drive ID",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "const responseBody = pm.response.json();\r",
+                  "const drive_id = responseBody.value[0].id;\r",
+                  "\r",
+                  "pm.environment.set(\"drive_id\", drive_id);"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{access_token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://graph.microsoft.com/v1.0/sites/aspnet4you2.sharepoint.com:/sites/Graph-Demo:/drives",
+              "protocol": "https",
+              "host": [
+                "graph",
+                "microsoft",
+                "com"
+              ],
+              "path": [
+                "v1.0",
+                "sites",
+                "aspnet4you2.sharepoint.com:",
+                "sites",
+                "Graph-Demo:",
+                "drives"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Root Folder",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "const responseBody = pm.response.json();\r",
+                  "const rootfolder_id = responseBody.id;\r",
+                  "\r",
+                  "pm.environment.set(\"rootfolder_id\", rootfolder_id);"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{access_token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://graph.microsoft.com/v1.0/drives/{{drive_id}}/root",
+              "protocol": "https",
+              "host": [
+                "graph",
+                "microsoft",
+                "com"
+              ],
+              "path": [
+                "v1.0",
+                "drives",
+                "{{drive_id}}",
+                "root"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Upload to root folder",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{access_token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "Hello this is updated file!!"
+            },
+            "url": {
+              "raw": "https://graph.microsoft.com/v1.0/drives/{{drive_id}}/root:/test2.txt:/content",
+              "protocol": "https",
+              "host": [
+                "graph",
+                "microsoft",
+                "com"
+              ],
+              "path": [
+                "v1.0",
+                "drives",
+                "{{drive_id}}",
+                "root:",
+                "test2.txt:",
+                "content"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Upload to subfolder",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{access_token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "Hello this is updated file!!"
+            },
+            "url": {
+              "raw": "https://graph.microsoft.com/v1.0/drives/{{drive_id}}/root:/demo/test2.txt:/content",
+              "protocol": "https",
+              "host": [
+                "graph",
+                "microsoft",
+                "com"
+              ],
+              "path": [
+                "v1.0",
+                "drives",
+                "{{drive_id}}",
+                "root:",
+                "demo",
+                "test2.txt:",
+                "content"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GetFileReference rootfolder",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "const responseBody = pm.response.json();\r",
+                  "const file_id = responseBody.id;\r",
+                  "\r",
+                  "pm.environment.set(\"file_id\", file_id);"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{access_token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "https://graph.microsoft.com/v1.0/drives/{{drive_id}}/root:/test2.txt",
+              "protocol": "https",
+              "host": [
+                "graph",
+                "microsoft",
+                "com"
+              ],
+              "path": [
+                "v1.0",
+                "drives",
+                "{{drive_id}}",
+                "root:",
+                "test2.txt"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GetFileReference subfolder",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "const responseBody = pm.response.json();\r",
+                  "const file_id = responseBody.id;\r",
+                  "\r",
+                  "pm.environment.set(\"file_id\", file_id);"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{access_token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "https://graph.microsoft.com/v1.0/drives/{{drive_id}}/root:/demo/test2.txt",
+              "protocol": "https",
+              "host": [
+                "graph",
+                "microsoft",
+                "com"
+              ],
+              "path": [
+                "v1.0",
+                "drives",
+                "{{drive_id}}",
+                "root:",
+                "demo",
+                "test2.txt"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}
